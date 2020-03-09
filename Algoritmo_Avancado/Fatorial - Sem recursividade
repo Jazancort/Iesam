@@ -6,10 +6,12 @@ int main() {
 
   printf("Escreva qualquer numero: ");
   scanf("%d", &n);
-
+  
+  if(n<0)
+    printf("Tente um numero positivo");
+    else{
   for(i=1; i<=n; i++)
   fat= fat*i;
-  
   printf("Fatorial= %ld", fat);
-
+    }
 }
