@@ -1,0 +1,108 @@
+#include <iostream>
+using namespace std;
+
+struct item{
+       item *next;
+       short numero;
+};
+
+ item *topo = NULL;
+       
+       void push(short elemento){
+            item * novo;
+            novo=new item;
+            
+            if(novo==NULL){
+               cout<<"erro locacao";
+            }
+            novo->numero = elemento;
+            novo-> next = topo;
+            topo = novo;
+        }
+        
+        
+        bool empty(){
+                 return (topo==NULL);
+        }
+        
+       void pop(){
+                 item * aux;
+                 if(!empty()) { 
+                    cout<<"\n valor retirado - "<<topo->numero;
+                    aux = topo->next;
+                    delete topo;
+                    topo = aux;
+                  } else {
+                         cout<<"pilha vazia";
+                  }   
+        }
+       
+        void mostra(){
+             item * aux;
+             aux = new item;
+             aux = topo;
+             cout<<"\n Quantidade(s): ";
+             
+    
+             while (aux!=NULL) { 
+                  cout<< aux-> numero<<" - ";
+                    aux=aux->next;
+             }
+           cout <<"\n fim da pilha";
+        }
+
+
+void MostrarMaior() {
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+}
+
+int main() {
+    short opcao, elem;
+    
+    do {
+    	cout << "\n-----------------------------------------------\n";
+    
+        cout << "\n\n1 - Inserir um jornal na pilha \n";
+        
+        cout << "\n2 - Retirar um jornal na pilha \n";
+        
+        cout << "\n3 - mostrar jornal na pilha \n";
+        
+        cout << "\n4 - Sair pilha \n";
+        
+        cout << "\n\n Escolha uma opcao: ";
+        
+        cin>> opcao;
+        
+        cout << "-----------------------------------------------\n";
+        
+        switch(opcao) {
+            case 1:
+                cout << "\n Entre com a quantidade de jornal: ";
+                cin >> elem;
+                push (elem);
+                break;
+                
+                
+            case 2:
+                pop();
+                break;
+                
+                
+            case 3:
+                mostra();
+        }
+   } while (opcao!= 4);
+   return 0;
+                
+}

@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	struct registro
+	{
+		unsigned int matricula;
+		char Nome[20];
+		char Celular[11];
+		char email[30];
+		float Nota;
+		int Frequencia;
+		char Situacao;
+	
+	}typedef registro;
+	
+	char pausa;
+	void inclusao(registro *, int);
+	void consulta(void);
+	void alteracao(registro *, int);
+	void exclusao(void);
+	void listagem(registro *,int);
+	int pesquisar(registro *, int, int);
+	
+	int main (void)
+	{
+		registro *Alunos;
+		int cads = 0;
+		
+		Alunos =(registro *) malloc(sizeof(registro));
+		
+		cchar op= '0';
+		do
+		{
+			printf("\e[H\e[2J");
+			printf("MEGA POWER COMPUTAÇÃO AVANÇADA\n");
+			printf("CURSO DE PROGRAMAÇÃO EM PYTHON\n");
+			printf("MENU DE OPÇÕES\n");
+			printf("==================================\n\n");
+			prinf("1 - Inclusão\n");
+			prinf("2 - Consulta\n");
+			prinf("3 - Alteração\n");
+			prinf("4 - Exclusão\n");
+			prinf("5 - Listagem\n");
+			prinf("0 - Sair\n");
+			prinf("--------------------------------------\n");
+			prinf("Escolha uma opção: \n");
+			scanf("%c", &op);
+			switch (op)
+			{
+				case '1':
+					inclusao(Alunos, cads);
+					cads++;
+					Alunos = (registro *) realloc(Alunos, (cads+1)sizeof(registro));
+					break;
+				case '2': consulta();
+					break;
+				case '3': alteracao(Alunos, cads);
+					break;
+				case '4': exlcusao();
+					break;
+				case '5': listagem(Alunos, cads);
+					break;			
+					
+			}
+		} while (op != '0');
+		return 0;
+	}
+	
+	void inclsusao(registro *Alu, int TAM)
+			printf("\e[H\e[2J");
+			printf("MEGA POWER COMPUTAÇÃO AVANÇADA\n");
+			printf("CURSO DE PROGRAMAÇÃO EM PYTHON\n");
+			printf("MENU DE OPÇÕES\n");
+			printf("==================================\n\n");
+			
+			printf("Digiete a %ia. Matricula: ", TAM+1);
+			scanf("%i", &Alu[TAM].matricula);
+			printf("Digite o Nome: ");
+			scanf("%20s", &Alu[TAM].Nome);
+			print("Digite o Celular: ")
+	{
+		printf()
+	}
+	return 0;
+}

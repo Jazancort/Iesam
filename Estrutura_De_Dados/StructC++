@@ -1,0 +1,41 @@
+//biblioteca
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+//definindo estrutura
+struct info_t {
+  string nome;
+  int matricula;
+} alunos [6];
+
+void printinfo (info_t info);
+
+int main ()
+{
+  string mystr;
+  int n;
+  
+//entrada de dados
+  for (n=0; n<6; n++)
+  {
+    cout << "\nDigite o nome: ";
+    getline (cin,alunos[n].nome);
+    cout << "Digite a matricula: ";
+    getline (cin,mystr);
+    stringstream(mystr) >> alunos[n].matricula;
+  }
+
+//saida de dados
+  cout << "\nVoce digitou esses nomes: \n";
+  for (n=0; n<6; n++)
+    printinfo (alunos[n]);
+  return 0;
+}
+
+void printinfo (info_t info)
+{
+  cout << info.nome;
+  cout << " (" << info.matricula << ")\n";
+}
