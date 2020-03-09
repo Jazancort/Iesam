@@ -1,0 +1,53 @@
+def mergeSort(lista): 
+    if len(lista)>1: 
+		  #Meio da lista
+        mid = len(lista)//2
+
+        # dividindo as listas 
+        esquerda = lista[:mid]
+        print(f"Lista esquerda: {esquerda}")
+        direita = lista[mid:]
+        print(f"Lista direita: {direita} ")
+
+        # recursividade 
+        mergeSort(esquerda)
+        mergeSort(direita)
+
+        i = j = k = 0
+		
+        # laço para lidar com as pilhas das listas
+        while i < len(esquerda) and j < len(direita): 
+            if esquerda[i] < direita[j]: 
+                lista[k] = esquerda[i] 
+                i+=1
+            else: 
+                lista[k] = direita[j] 
+                j+=1
+            k+=1
+        print(f"Ordenação da lista: {lista}")
+		
+		# checar se o elemento está vazio
+        while i < len(esquerda): 
+            lista[k] = esquerda[i] 
+            i+=1
+            k+=1
+		
+        while j < len(direita): 
+            lista[k] = direita[j] 
+            j+=1
+            k+=1
+        print(f"Ordenação da lista: {lista}")
+
+
+def printLista(Lista): 
+	for i in range(len(lista)):		 
+		print(lista[i],end=" ") 
+	print() 
+
+
+def Main(): 
+	lista = [12, 11, 13, 5, 6, 7, 8, 4, 1] 
+	print (f"Lista de entrada: {lista}", end="\n") 
+	mergeSort(lista) 
+	print(f"Lista ordenado: {lista}", end="\n") 
+Main()
