@@ -1,0 +1,18 @@
+package exerc;
+import java.util.Scanner;
+public class questão {
+	 public static void main(String[] args){
+		 Scanner input = new Scanner(System.in);
+		 String nome1, nome2;		 
+		 System.out.println("Digite o primeiro nome: ");
+		 	nome1 = input.nextLine();	 	
+		 System.out.println("Digite o segundo nome: ");
+		 	nome2 = input.nextLine();		 	
+		 	if(nome1.toLowerCase().equals(nome2.toLowerCase())) {
+		 		System.out.println("Os nomes são iguais");
+		 	} else {
+		 		System.out.println("Os nomes são diferentes");
+		 	}		 
+	 }
+			
+} 

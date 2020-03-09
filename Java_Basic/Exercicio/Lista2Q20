@@ -1,0 +1,37 @@
+package exerc;
+import java.util.Scanner;
+
+
+
+public class questão {
+
+	 public static void main(String[] args){
+		 Scanner input = new Scanner(System.in);
+		 String nome1, sexo;
+		 int idade;
+		 
+		 System.out.println("Digite o nome: ");
+		 	nome1 = input.nextLine();
+		 	
+		 System.out.println("Digite o seu sexo (f ou m): ");
+		 	sexo = input.nextLine();
+		 	
+		 System.out.println("Digite a sua idade: ");
+		 	idade = Integer.parseInt(input.nextLine());		
+		 	
+		 if (sexo.toUpperCase().equals("F") && idade>= 18) {
+		 	System.out.println("Dados da candidata salvos no banco de dados");
+		 	} else {
+		 		if(sexo.toUpperCase().equals("M"))
+		 			System.out.println("Candidato não condizente com o cargo");
+		 	}
+		 if (!sexo.equals("f") && !sexo.equals("m")) {
+			 System.out.println("Operação invalida");
+		 }
+		 	
+		 	
+		 	
+		 
+	 }
+			
+} 

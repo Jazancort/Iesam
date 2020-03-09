@@ -1,0 +1,31 @@
+
+package lista2;
+import javax.swing.JOptionPane;
+
+
+public class Q16 {
+    
+        public static void main(String[] args){
+            
+            int idade;
+            idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade: "));
+            
+            if( 5 <= idade && idade <= 7 ){
+                JOptionPane.showMessageDialog(null,"Categoria: Infantial A "); 
+            }
+            if( 8 <= idade && idade <= 10 ){
+                JOptionPane.showMessageDialog(null,"Categoria: Infantial B ");
+            }
+            if( 11 <= idade && idade <= 13 ){
+                JOptionPane.showMessageDialog(null,"Categoria: Juvenil A ");
+            }
+            if( 14 <= idade && idade <= 17 ){
+                JOptionPane.showMessageDialog(null,"Categoria: Juvenil B ");
+            }
+            if(  idade >= 18 ){
+                JOptionPane.showMessageDialog(null,"Categoria: Senior ");
+            }
+        }
+
+       }
+

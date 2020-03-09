@@ -1,0 +1,35 @@
+package exerc;
+import java.util.Scanner;
+public class questão {
+	 public static void main(String[] args){
+	        double valor1, valor2, resultado;
+	        String op;
+	        Scanner sc = new Scanner(System.in);
+	        System.out.print("Digite o primeiro valor: ");
+	        valor1 = Integer.parseInt(sc.nextLine());
+	        System.out.print("Digite o segundo valor: ");
+	        valor2 = Integer.parseInt(sc.nextLine());
+	        System.out.print("Digite a operação a ser feita (+, -, *, /): ");
+	        op = sc.nextLine();
+	        if (op.equals("+") ){
+	            resultado = valor1+ valor2;
+	            System.out.println("Valor da soma: " + resultado );
+	            }
+	        if(op.equals("-") ){
+	            resultado = valor1 - valor2;
+	            System.out.println("Valor da subtração: " + resultado );
+	            }	        
+	        if(op.equals("*") ){
+	            resultado = valor1 * valor2;
+	            System.out.println("Valor da multiplicação: " + resultado );
+	            }	        
+	        if (op.equals("/") ){
+	            resultado = valor1 / valor2;
+	            System.out.println("Valor da divisão: " + resultado );
+	        	}	        
+	        if (!op.equals("+") && !op.equals("-") && !op.equals("/") && !op.equals("*")) {
+	    	   System.out.println("Operação invalida");
+	        	}
+	    }			
+} 
+
