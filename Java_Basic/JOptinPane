@@ -1,0 +1,21 @@
+package newpackage;
+import javax.swing.JOptionPane;
+
+public class NewClass2 {
+    public static void main(String[] args){
+        
+        String nome, email;
+        int idade;
+        double altura, peso;
+        
+        nome = JOptionPane.showInputDialog("Digite seu nome: ");
+        email = JOptionPane.showInputDialog("Digite seu E-mail: ");
+        idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade: "));
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite sua altura: "));
+        peso = Double.parseDouble(JOptionPane.showInputDialog("Digite seu peso:  "));
+        
+        JOptionPane.showMessageDialog(null,"Nome: "+nome+"\nE-mail:"+email+"\nIdade:"+idade+"\nAltura: "+altura+"\nPeso: "+peso);
+    }
+    
+    
+}

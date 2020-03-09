@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aulaexercicio;
+import javax.swing.JOptionPane;
+
+
+public class NewClass {
+    
+    public static void main(String[] args){
+        
+        double valor1, valor2, resultado1, resultado2;
+        
+       valor1 = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro valor: "));
+       valor2 = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo valor:  ")); 
+       
+       resultado1 = Math.pow(valor1, 2);
+       resultado2 = Math.sqrt(valor2);
+       
+      JOptionPane.showMessageDialog(null,"Resultado 1: "+ resultado1 + "\nResultado 2: "+ resultado2); 
+        
+    }
+    
+    
+}
+
+    
+    
+    
+    
+

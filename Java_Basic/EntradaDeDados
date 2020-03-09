@@ -1,0 +1,30 @@
+package newpackage;
+
+import java.util.Scanner;
+
+public class NewClass {
+    public static void main(String[] args){
+        
+        //Instanciamendo um objeto classe Scanner
+        Scanner input = new Scanner(System.in);
+        //criação de variaveis
+        String nome, email;
+        int idade;
+        double altura, peso;
+        //Entrada de valores
+        System.out.print("Digite seu nome: ");
+        nome = input.nextLine();
+        System.out.print("Digite o seu e-mail: ");
+        email = input.nextLine();
+        System.out.print("Digite a sua idade: ");
+        idade = Integer.parseInt(input.nextLine());
+        System.out.print("Digite sua altura: ");
+        altura = Double.parseDouble(input.nextLine());
+        System.out.print("Digite o seu peso: ");
+        peso = input.nextDouble();
+        
+        //Saida de dados
+        System.out.print("Nome:"+nome+"\nE-mail:"+email+"\nIdade:"+idade+"\nAltura:"+ altura+"\nPeso:"+ peso);
+    }
+    
+}

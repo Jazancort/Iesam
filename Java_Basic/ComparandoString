@@ -1,0 +1,17 @@
+
+
+package UsoString;
+
+
+public class UsoDoString {
+    public static void main(String[]args){
+        String nome1 = "fulano", nome2 = "fulano";
+        
+        if (nome1.toLowerCase().equals(nome2.toLowerCase())){
+            System.out.println("Os nomes são iguais");
+        } else {
+            System.out.println("Os nomes são diferentes");
+        }
+    }
+    
+}

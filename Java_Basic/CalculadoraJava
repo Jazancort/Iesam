@@ -1,0 +1,27 @@
+package newpackage;
+import javax.swing.JOptionPane;
+
+public class NewClass1 {
+    public static void main(String[] args){
+        
+        
+        double valor1, valor2, soma, subtracao, divisao, multiplicacao;
+        
+        
+    
+        valor1 = Double.parseDouble(JOptionPane.showInputDialog("Digite o primeiro valor: "));
+        valor2 = Double.parseDouble(JOptionPane.showInputDialog("Digite o segundo valor:  "));
+        
+        
+        soma = valor1 + valor2;
+        subtracao = valor1 - valor2;
+        divisao = valor1 / valor2;
+        multiplicacao = valor1 * valor2;
+        
+        JOptionPane.showMessageDialog(null,"Soma: "+soma+"\nSubtração: "+subtracao+"\nDivisao: "+divisao+"\nmultiplicacao: "+multiplicacao);
+        
+        
+    }
+    
+    
+}

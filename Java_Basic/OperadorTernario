@@ -1,0 +1,18 @@
+
+package UsoString;
+
+
+public class OperadorTernario {
+        public static void main(String[]args){
+            
+            String result;
+            int idade =15;
+            
+            result = (idade >= 18) ? "Maior de idade\n" : "Menor de idade\n";
+            System.out.print(result);
+            //System.out.print((idade >= 18) ? "Maior de idade" : "Menor de idade");
+            
+            
+        }
+    
+}
