@@ -1,0 +1,41 @@
+*Criar tabela com informações do funcionário:
+NOME	  |DESCRIÇÃO	            |CODIGO
+_______________________________________________
+Nome	 | Nome do funcionário	  |01
+Fiscal   | Numero de id do fiscal |02
+CPF	 | Numero de CPF do Func. |03
+Telefone | Numero de tel do func. |04
+Email	 | E-mail do funcionário  |05
+Endereço | Endereço do funci	  |06
+________________________________________________
+*Criar tabela com dados da escola 
+	
+		
+		
+		
+
+
+*Criar tabela “PRÉDIO”:
+NOME	  | DESCRIÇÃO	                    |CÓDIGO
+--------------------------------------------------
+Central | Todos os blocos (A,B,C,D e E) |	
+Anexo 1 | Sala de matrícula 	        |
+Anexo 2 | Selas de EAD	                |
+--------------------------------------------------	
+*Criar tabela “BLOCO”:
+PRÉDIO	   |DESCRÇÃO	                     |CÓDIGO
+----------------------------------------------------
+CENTRAL    | Salas de aula do lab de Física |
+CENTRAL    | Salas de aula e lab de inform. |	
+CENTRAL    | Salas de aula 	                |
+SECUNDARIO | Salas de aula	        |
+----------------------------------------------------		
+		
+
+	*Criar tabela “ANDAR”:
+ANDAR	DESCRIÇÃO	CODIGO
+		
+		
+		
+		
+
