@@ -1,0 +1,88 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct ARVORE{
+  char num[30];
+  ARVORE *esq, *dir;
+};
+
+
+ARVORE* inserir(ARVORE *aux, char num[30]){
+  if (aux == NULL){
+    aux = new ARVORE();
+    strcpy(aux->num, num);
+    aux->esq = NULL;
+    aux->dir = NULL;
+  }
+  else if (strcmp(aux->num, num) > 0){
+    aux->esq = inserir(aux->esq, num);
+  }
+  else{
+    aux->dir = inserir(aux->dir, num);
+  }
+
+  return aux;
+}
+
+
+int consultar(ARVORE *aux, char num[30], int achou){
+  if (aux != NULL && achou == 0){
+    if(strcmp(aux->num, num) == 0){
+      achou = 1;
+    }
+    else if (strcmp(aux->num, num) > 0){
+      achou = consultar(aux->esq, num, achou);
+    }
+    else{
+      achou = consultar(aux->dir, num, achou);
+    }
+  }
+
+  return achou;
+}
+
+
+void mostraremordem(ARVORE *aux){
+  if (aux != NULL){
+    mostraremordem(aux->esq);
+    cout << aux->num << " " << endl;
+    mostraremordem(aux->dir);
+  }
+}
+
+
+int main() {
+  ARVORE *raiz = NULL;
+  ARVORE *aux;
+  int op, achou;
+  char numero[30];
+
+  do{
+    cout << "\nMENU DE OPCOES" << endl;
+    cout << "1 - Inserir aluno" <<endl;
+    cout << "2 - Consultar aluno" << endl;
+    cout << "3 - Sair" << endl;
+    cout << "Digite a opcao desejada:" << endl;
+    cin >> op;
+    if (op < 1 || op > 3){
+      cout << "Opcao invalida";
+    }
+    else if (op == 1){
+      cout << "Digite o nome a ser adicionado: " << endl;
+      cin >> numero;
+      raiz = inserir(raiz, numero);
+      cout << "Nome " << numero << " inserido na arvore" << endl;
+    }
+    else if (op == 2){
+      if (raiz == NULL){
+        cout <<"Arvore vazia" << endl;
+      }
+      else{
+        cout << "Listando os elementos em ordem: " << endl;
+        mostraremordem(raiz);
+      }
+    }
+  } while (op != 3);
+}
