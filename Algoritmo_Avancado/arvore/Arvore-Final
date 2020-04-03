@@ -107,17 +107,22 @@ int main() { //Faz rodar o programa
   raiz->dir->dir->esq = new ARVORE(8); 
 
   //Print dos resultados:
-  cout << "\nListando os elementos em pre-ordem: \n" << endl;
+  cout << "\nListando os elementos em pre-ordem: " << endl;
   mostrarpreordem(raiz);
+  cout<< "\n" << endl;
   
-  /*cout << "\nListando os elementos em ordem: \n" << endl;
-  mostraremordem(raiz);*/
-  
-  cout << "\nListando os elementos em pos-ordem: \n" << endl;
+  /*cout << "\nListando os elementos em ordem: " << endl;
+  mostraremordem(raiz);
+  cout<< "\n" << endl;*/
+
+  cout << "\nListando os elementos em pos-ordem: " << endl;
   mostrarposordem(raiz);
-  
+  cout<< "\n" << endl;
+
   cout << "\nListando os elementos em extensão: \n";  
   printLevelOrder(raiz);  
+  cout<< "\n" << endl;
+
   
   cout << "\n----------------------------------------------" << endl;
   }
