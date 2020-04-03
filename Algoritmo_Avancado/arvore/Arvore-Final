@@ -16,8 +16,7 @@ struct ARVORE{ //criação da arvore
 };
 //------------------------------------------------------------------//
 void mostrarpreordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore - PRE ORDEM
-  if (aux == NULL)
-    return;
+  if (aux != NULL){   
     //da print dos dados no nó
   	cout << aux->num << " ";
     //retorna na subarvore da esquerda
@@ -25,25 +24,26 @@ void mostrarpreordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvor
     //retorna na subarvore da direita
     mostrarpreordem(aux->dir);
   }
+  }
 
 
 /*void mostraremordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore
-  if (aux == NULL)
-    return;
+  if (aux != NULL){
     mostraremordem(aux->esq);
     cout << aux->num << " ";
     mostraremordem(aux->dir);
+}
 }*/
 
 void mostrarposordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore - POS ORDEM
-  if (aux == NULL)
-    return;
+  if (aux != NULL){
     //Primeiro na arvore da esquerda 
     mostrarposordem(aux->esq);
     //Segundo na arvore da direita
     mostrarposordem(aux->dir);
     //Agora com o nó
     cout << aux->num << " ";
+}
 }
 //------------------------------------------------------------------//
 
@@ -64,14 +64,15 @@ void printOrdemNivel(ARVORE* raiz)
 //print de nós em determinado nivel
 void printDeterminadoNivel(ARVORE* raiz, int level)  
 {  
-    if (raiz == NULL)  
-        return;  
+    if (raiz != NULL){  
+          
     if (level == 1)  
         cout << raiz->num << " ";  
     else if (level > 1)  
     {  
         printDeterminadoNivel(raiz->esq, level-1);  
         printDeterminadoNivel(raiz->dir, level-1);  
+    }
     }  
 }  
   
