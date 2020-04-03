@@ -48,21 +48,21 @@ void mostrarposordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvor
 //------------------------------------------------------------------//
 
 /* Prototipos de função */
-void printGivenLevel(ARVORE* raiz, int level);  
+void printDeterminadoNivel(ARVORE* raiz, int level);  
 int altura(ARVORE* arvore);  
 ARVORE* newArvore(int num);  
   
 //Função de print de extensão
-void printLevelOrder(ARVORE* raiz)  
+void printOrdemNivel(ARVORE* raiz)  
 {  
     int h = altura(raiz);  
     int i;  
     for (i = 1; i <= h; i++)  
-        printGivenLevel(raiz, i);  
+        printDeterminadoNivel(raiz, i);  
 }  
   
 //print de nós em determinado nivel
-void printGivenLevel(ARVORE* raiz, int level)  
+void printDeterminadoNivel(ARVORE* raiz, int level)  
 {  
     if (raiz == NULL)  
         return;  
@@ -70,8 +70,8 @@ void printGivenLevel(ARVORE* raiz, int level)
         cout << raiz->num << " ";  
     else if (level > 1)  
     {  
-        printGivenLevel(raiz->esq, level-1);  
-        printGivenLevel(raiz->dir, level-1);  
+        printDeterminadoNivel(raiz->esq, level-1);  
+        printDeterminadoNivel(raiz->dir, level-1);  
     }  
 }  
   
@@ -120,7 +120,7 @@ int main() { //Faz rodar o programa
   cout<< "\n" << endl;
 
   cout << "\nListando os elementos em extensão: \n";  
-  printLevelOrder(raiz);  
+  printOrdemNivel(raiz);  
   cout<< "\n" << endl;
 
   
