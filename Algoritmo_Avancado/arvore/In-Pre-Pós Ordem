@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+/*Um nó de uma arvore binária possui dados, ponteiro para o filho
+da esquerda e da direita*/
+
+struct ARVORE{ //criação da arvore
+  int num;
+  struct ARVORE *esq, *dir;
+  ARVORE(int num){
+    this->num = num;
+    esq = dir = NULL;
+  }
+	
+};
+//-----------------------------------//
+void mostrarpreordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore - PRE ORDEM
+  if (aux == NULL)
+    return;
+    //da print dos dados no nó
+  	cout << aux->num << " ";
+    //retorna na subarvore da esquerda
+    mostrarpreordem(aux->esq);
+    //retorna na subarvore da direita
+    mostrarpreordem(aux->dir);
+  }
+
+
+void mostraremordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore
+  if (aux == NULL)
+    return;
+    mostraremordem(aux->esq);
+    cout << aux->num << " ";
+    mostraremordem(aux->dir);
+}
+
+void mostrarposordem(ARVORE *aux){ //Função de mostrar a ordem dentro da arvore - POS ORDEM
+  if (aux == NULL)
+    return;
+    //Primeiro na arvore da esquerda 
+    mostrarposordem(aux->esq);
+    //Segundo na arvore da direita
+    mostrarposordem(aux->dir);
+    //Agora com o nó
+    cout << aux->num << " ";
+}
+//--------------------------------------//
+
+
+
+int main() { //Faz rodar o programa
+  struct ARVORE *raiz = new ARVORE(6); //definindo a raiz 
+  //definindo os nós e posição
+  raiz->esq             = new ARVORE(2); 
+  raiz->dir         = new ARVORE(7); 
+  raiz->esq->esq     = new ARVORE(1); 
+  raiz->esq->dir = new ARVORE(4);  
+  raiz->esq->dir->esq = new ARVORE(3);
+  raiz->esq->dir->dir = new ARVORE(5);
+  raiz->dir->dir = new ARVORE(9) ;
+  raiz->dir->dir->esq = new ARVORE(8); 
+
+  //Print dos resultados
+  cout << "\nListando os elementos em pre-ordem: " << endl;
+  mostrarpreordem(raiz);
+  cout << "\nListando os elementos em ordem: " << endl;
+  mostraremordem(raiz);
+  cout << "\nListando os elementos em pos-ordem: " << endl;
+  mostrarposordem(raiz);
+  cout << "\n----------------------------------------------" << endl;
+  }
