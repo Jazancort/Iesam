@@ -1,0 +1,96 @@
+// Recursive CPP program for level 
+// order traversal of Binary Tree  
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+/* A binary tree node has data,  
+pointer to left child  
+and a pointer to right child */
+class arvore  
+{  
+    public: 
+    int num;  
+    arvore* esq, *dir;  
+};  
+  
+/* Function protoypes */
+void printGivenLevel(arvore* raiz, int level);  
+int altura(arvore* arvore);  
+arvore* newArvore(int num);  
+  
+/* Function to print level  
+order traversal a tree*/
+void printLevelOrder(arvore* raiz)  
+{  
+    int h = altura(raiz);  
+    int i;  
+    for (i = 1; i <= h; i++)  
+        printGivenLevel(raiz, i);  
+}  
+  
+/* Print nodes at a given level */
+void printGivenLevel(arvore* raiz, int level)  
+{  
+    if (raiz == NULL)  
+        return;  
+    if (level == 1)  
+        cout << raiz->num << " ";  
+    else if (level > 1)  
+    {  
+        printGivenLevel(raiz->esq, level-1);  
+        printGivenLevel(raiz->dir, level-1);  
+    }  
+}  
+  
+/* Compute the "height" of a tree -- the number of  
+    nodes along the longest path from the root node  
+    down to the farthest leaf node.*/
+int altura(arvore* arvore)  
+{  
+    if (arvore == NULL)  
+        return 0;  
+    else
+    {  
+        /* compute the height of each subtree */
+        int ealtura = altura(arvore->esq);  
+        int daltura = altura(arvore->dir);  
+  
+        /* use the larger one */
+        if (ealtura > daltura)  
+            return(ealtura + 1);  
+        else return(daltura + 1);  
+    }  
+}  
+  
+/* Helper function that allocates  
+a new node with the given data and 
+NULL left and right pointers. */
+arvore* newArvore(int num)  
+{  
+    arvore* Arvore = new arvore(); 
+    Arvore->num = num;  
+    Arvore->esq = NULL;  
+    Arvore->dir = NULL;  
+  
+    return(Arvore);  
+}  
+  
+/* Driver code*/
+int main()  
+{  
+  arvore *raiz = newArvore(6);  
+  raiz->esq             = newArvore(2); 
+  raiz->dir         = newArvore(7); 
+  raiz->esq->esq     = newArvore(1); 
+  raiz->esq->dir = newArvore(4);  
+  raiz->esq->dir->esq = newArvore(3);
+  raiz->esq->dir->dir = newArvore(5);
+  raiz->dir->dir = newArvore(9) ;
+  raiz->dir->dir->esq = newArvore(8);
+  
+    cout << "Level Order traversal of binary tree is \n";  
+    printLevelOrder(raiz);  
+  
+    return 0;  
+}  
+  
